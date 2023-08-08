@@ -1,0 +1,17 @@
+{
+  "name": "effective-octo-waddle",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/stephen-cox/effective-octo-waddle.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/stephen-cox/effective-octo-waddle/issues"
+  },
+  "homepage": "https://github.com/stephen-cox/effective-octo-waddle#readme",
+  "dependencies": {
+    "puppeteer": "^21.0.1"
+  }
+}
