@@ -7,8 +7,8 @@ const puppeteer = require('puppeteer');
 
 
 // Config.
-const width = 1280;
-const height = 720;
+const width = 1180;
+const height = 650;
 const output_dir = 'screenshots';
 const sites_file = 'sites.txt';
 
@@ -28,6 +28,10 @@ async function screenshot_sites(sites, output_dir, width, height) {
     height: height,
   });
 
+  if (!fs.existsSync(output_dir)) {
+    fs.mkdirSync(output_dir);
+  }
+
   // Screenshot each site.
   for (let i = 0; i < sites.length; i++) {
     const site = sites[i];
@@ -36,6 +40,10 @@ async function screenshot_sites(sites, output_dir, width, height) {
       .replace(/(^\w+:|^)\/\//, '')
       .replace(/[^a-z0-9]/gi, '_')
       .toLowerCase() + '.png';
+
+    if (fs.existsSync(output_dir + '/' + filename)) {
+      continue;
+    }
 
     try {
       try {
